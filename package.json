@@ -1,12 +1,22 @@
 {
-  "name": "project-starter",
+  "name": "Middlebury Wordle Game Project",
   "version": "0.1.0",
   "private": true,
-  "author": "Your name here",
+  "authors": [
+    "Wright Frost",
+    "Lucas Shin",
+    "Hayden Hunskor",
+    "Addison Bent",
+    "Jared Boyd",
+    "Lizzie Kenter",
+    "Hannah Sullivan"
+  ],
   "contributors": [
     "Christopher Andrews <candrews@middlebury.edu>",
     "Michael Linderman <mlinderman@middlebury.edu>"
   ],
+  "git_repository": "https://github.com/csci0312-f22/project-frogfish",
+  "project_description": "Implementing a middlebury-themed version of Wordle",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -1,3 +1,3 @@
-test("Placeholder test - replace with real tests", () => {
-  test.todo("Need to write tests");
+test.skip("Placeholder test - replace with real tests", () => {
+  test("Need to write tests");
 });

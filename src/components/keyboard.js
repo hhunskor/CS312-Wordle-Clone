@@ -1,4 +1,5 @@
 //Keyboard component
+//Only displays right now and doesn't handle inputs
 
 import styles from "../styles/keyboard.module.css";
 import PropTypes from "prop-types";

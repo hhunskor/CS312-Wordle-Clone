@@ -36,15 +36,11 @@ function Guess({
   setCorrectLetters(correctLettersCopy);
   setGuessedLetters(guessedLettersCopy);
 
-  //console.log(correctLetters);
-  //console.log(guessedLetters);
-
-  //check if word is correct
+  // check if word is correct
   if (input === correctWord) {
     setGameOver(true);
   }
 
-  console.log(guessedWords);
   return <div>{guessedWords}</div>;
 }
 

@@ -61,4 +61,3 @@ Guess.propTypes = {
 };
 
 export default Guess;
-/* eslint-disable */

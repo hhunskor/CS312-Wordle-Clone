@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import Head from "next/head";
 
 import styles from "../styles/index.module.css";
@@ -12,11 +14,26 @@ export default function Main() {
   // const correctWord = testwords[Math.floor(Math.random() * testwords.length)];
   const correctWord = testwords[0];
   const [guessWord, setGuess] = useState("");
+  const [gameOver, setGameOver] = useState(false);
+  const [correctLetters, setCorrectLetters] = useState([]);
+  const [guessedLetters, setGuessedLetters] = useState([]);
 
   console.log(`correct word to test: ${correctWord}`);
 
-  function handleGuess(guess, correctGuess) {
-    return <Guess input={guess} correctWord={correctGuess} />;
+  let displayGuesses = null;
+
+  function guessComponent(guess, correctGuess, displayGuesses) {
+    displayGuesses = (
+      <Guess
+        input={guess}
+        correctWord={correctGuess}
+        setGameOver={setGameOver}
+        correctLetters={correctLetters}
+        setCorrectLetters={setCorrectLetters}
+        guessedLetters={guessedLetters}
+        setGuessedLetters={setGuessedLetters}
+      />
+    );
   }
 
   const inputBox = (
@@ -27,14 +44,14 @@ export default function Main() {
       onChange={(event) => {
         setGuess(event.target.value);
       }}
-     />
+    />
   );
 
   const submit = (
     <button
       type="Submit"
       disabled={guessWord.length !== 5}
-      onClick={() => handleGuess(guessWord, correctWord)}
+      onClick={() => guessComponent(guessWord, correctWord, displayGuesses)}
     >
       Submit
     </button>
@@ -50,6 +67,7 @@ export default function Main() {
       <main>
         <h1 className="title">Generic Project</h1>
         <p>Wordle - Middlebury Style</p>
+        {displayGuesses}
         {inputBox}
         {submit}
       </main>

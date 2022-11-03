@@ -1,7 +1,5 @@
-/* eslint-disable */
-
 import PropTypes from "prop-types";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 function Guess({
   input,
@@ -14,22 +12,14 @@ function Guess({
   guessedWords,
   setGuessedWords,
 }) {
-  //const [guessedWords, setGuessedWords] = useState([]);
-  /*let guessedWordsCopy = guessedWords.map((a) => a);
-  guessedWordsCopy.push(input);*/
-
   setGuessedWords(
     [...guessedWords, input].map((word) => {
-      return <li>{word}</li>;
+      return <li key={word}>{word}</li>;
     })
   );
-  //setGuessedWords(guessedWordsCopy);
-  /*guessedWordsCopy = guessedWordsCopy.map((word) => {
-    return (<li>{word}</li>)
-  })*/
 
-  let correctLettersCopy = correctLetters.map((x) => x);
-  let guessedLettersCopy = guessedLetters.map((z) => z);
+  const correctLettersCopy = correctLetters.map((x) => x);
+  const guessedLettersCopy = guessedLetters.map((z) => z);
 
   for (let index = 0; index < input.length; index++) {
     const letter = input.charAt(index);
@@ -66,6 +56,9 @@ Guess.propTypes = {
   setCorrectLetters: PropTypes.func.isRequired,
   guessedLetters: PropTypes.arrayOf(PropTypes.string).isRequired,
   setGuessedLetters: PropTypes.func.isRequired,
+  guessedWords: PropTypes.arrayOf(PropTypes.string).isRequired,
+  setGuessedWords: PropTypes.func.isRequired,
 };
 
 export default Guess;
+/* eslint-disable */

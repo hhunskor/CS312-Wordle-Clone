@@ -34,7 +34,7 @@
 }
 
 .keyboard {
-  position: fixed;
-  bottom: 80;
+  position: flex;
+  bottom: 20;
   width: 100%;
 }

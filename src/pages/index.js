@@ -9,35 +9,61 @@ import testwords from "../../data/testwords.json";
 import { useState } from "react";
 
 import Guess from "../components/Guess";
+import Keyboard from "../components/Keyboard";
 
 export default function Main() {
   // const correctWord = testwords[Math.floor(Math.random() * testwords.length)];
   const correctWord = testwords[0];
+
   const [guessWord, setGuess] = useState("");
   const [gameOver, setGameOver] = useState(false);
+
   const [correctLetters, setCorrectLetters] = useState([]);
   const [guessedLetters, setGuessedLetters] = useState([]);
 
+  const [guessedWords, setGuessedWords] = useState([]);
+
   console.log(`correct word to test: ${correctWord}`);
 
-  let displayGuesses = null;
+  const [displayGuesses, setDisplayGuesses] = useState(); // do we have to initialize?
 
-  function guessComponent(guess, correctGuess, displayGuesses) {
-    displayGuesses = (
-      <Guess
-        input={guess}
-        correctWord={correctGuess}
-        setGameOver={setGameOver}
-        correctLetters={correctLetters}
-        setCorrectLetters={setCorrectLetters}
-        guessedLetters={guessedLetters}
-        setGuessedLetters={setGuessedLetters}
-      />
+  /*function guessComponent() {
+    //console.log("button clicked")
+    const guessView = <Guess
+                          input={guessWord}
+                          correctWord={correctWord}
+                          setGameOver={setGameOver}
+                          correctLetters={correctLetters}
+                          setCorrectLetters={setCorrectLetters}
+                          guessedLetters={guessedLetters}
+                          setGuessedLetters={setGuessedLetters}
+                          guessedWords={guessedWords}
+                          setGuessedWords={setGuessedWords}
+                        />
+
+    setDisplayGuesses(
+      guessView
     );
-  }
+    console.log("1st time: " + displayGuesses)
+  }*/
+
+  const guessView = (
+    <Guess
+      input={guessWord}
+      correctWord={correctWord}
+      setGameOver={setGameOver}
+      correctLetters={correctLetters}
+      setCorrectLetters={setCorrectLetters}
+      guessedLetters={guessedLetters}
+      setGuessedLetters={setGuessedLetters}
+      guessedWords={guessedWords}
+      setGuessedWords={setGuessedWords}
+    />
+  );
 
   const inputBox = (
     <input
+      disabled={gameOver === true}
       type="text"
       maxLength={5}
       placeholder={"Guess Here"}
@@ -47,11 +73,15 @@ export default function Main() {
     />
   );
 
+  console.log(correctLetters);
+  console.log(guessedLetters);
+
   const submit = (
     <button
       type="Submit"
       disabled={guessWord.length !== 5}
-      onClick={() => guessComponent(guessWord, correctWord, displayGuesses)}
+      //onClick={() => guessComponent()}
+      onClick={() => setDisplayGuesses(guessView)}
     >
       Submit
     </button>
@@ -60,18 +90,32 @@ export default function Main() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Generic project</title>
+        <title>Middlebury Wordle</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <h1 className="title">Generic Project</h1>
-        <p>Wordle - Middlebury Style</p>
+        <h1 className="title">Wordle</h1>
+        <p>project authors: team FROGFISH</p>
+        {/*<Guess
+        input={guessWord}
+        correctWord={correctWord}
+        setGameOver={setGameOver}
+        correctLetters={correctLetters}
+        setCorrectLetters={setCorrectLetters}
+        guessedLetters={guessedLetters}
+        setGuessedLetters={setGuessedLetters}
+        guessedWords={guessedWords}
+        setGuessedWords={setGuessedWords}
+        />*/}
         {displayGuesses}
         {inputBox}
         {submit}
       </main>
-
+      <Keyboard
+        correctLetters={correctLetters}
+        guessedLetters={guessedLetters}
+      />
       <footer>A 312 project</footer>
     </div>
   );

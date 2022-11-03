@@ -1,8 +1,9 @@
 /* eslint-disable */
 
 import PropTypes from "prop-types";
+import { useEffect } from "react";
 
-function guess({
+function Guess({
   input,
   correctWord,
   setGameOver,
@@ -10,18 +11,28 @@ function guess({
   setCorrectLetters,
   guessedLetters,
   setGuessedLetters,
+  guessedWords,
+  setGuessedWords,
 }) {
-  let correct = false;
-  const [guessedWords, setGuessedWords] = useState([]);
-  guessedWordsCopy = guessedWords.map((a) => a);
-  guessedWordsCopy.push(input);
-  setGuessedWords(guessedWordsCopy);
+  //const [guessedWords, setGuessedWords] = useState([]);
+  /*let guessedWordsCopy = guessedWords.map((a) => a);
+  guessedWordsCopy.push(input);*/
+
+  setGuessedWords(
+    [...guessedWords, input].map((word) => {
+      return <li>{word}</li>;
+    })
+  );
+  //setGuessedWords(guessedWordsCopy);
+  /*guessedWordsCopy = guessedWordsCopy.map((word) => {
+    return (<li>{word}</li>)
+  })*/
 
   let correctLettersCopy = correctLetters.map((x) => x);
   let guessedLettersCopy = guessedLetters.map((z) => z);
 
   for (let index = 0; index < input.length; index++) {
-    const letter = input[index];
+    const letter = input.charAt(index);
 
     if (correctWord.includes(letter) && !correctLettersCopy.includes(letter)) {
       correctLettersCopy.push(letter);
@@ -35,22 +46,19 @@ function guess({
   setCorrectLetters(correctLettersCopy);
   setGuessedLetters(guessedLettersCopy);
 
-  console.log(corectLetters);
-  console.log(guessedLetters);
+  //console.log(correctLetters);
+  //console.log(guessedLetters);
 
   //check if word is correct
   if (input === correctWord) {
     setGameOver(true);
   }
 
-  return (
-    <div>
-      <li>{guessedWords}</li>
-    </div>
-  );
+  console.log(guessedWords);
+  return <div>{guessedWords}</div>;
 }
 
-guess.propTypes = {
+Guess.propTypes = {
   input: PropTypes.string.isRequired,
   correctWord: PropTypes.string.isRequired,
   setGameOver: PropTypes.func.isRequired,
@@ -60,4 +68,4 @@ guess.propTypes = {
   setGuessedLetters: PropTypes.func.isRequired,
 };
 
-export default guess;
+export default Guess;

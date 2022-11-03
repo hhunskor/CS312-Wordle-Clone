@@ -1,12 +1,40 @@
-.keyButton {
-  border: 0;
+.grayKey {
   color: white;
-  padding: 0;
-  margin: 0 6px 0 0;
-  height: 58px;
-  border-radius: 4px;
-  flex: 1;
-  display: flex;
+  background-color: gray;
+  height: 45px;
+  width: 30px;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
+}
+
+.darkGrayKey {
+  color: white;
+  background-color: rgb(16, 14, 14);
+  height: 45px;
+  width: 30px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.greenKey {
+  color: white;
+  background-color: green;
+  height: 45px;
+  width: 30px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.keyRow {
+  width: 100%;
+  text-align: center;
+}
+
+.keyboard {
+  position: fixed;
+  bottom: 80;
+  width: 100%;
 }

@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import Head from "next/head";
 
 import styles from "../styles/index.module.css";
@@ -25,27 +23,7 @@ export default function Main() {
 
   console.log(`correct word to test: ${correctWord}`);
 
-  const [displayGuesses, setDisplayGuesses] = useState(); // do we have to initialize?
-
-  /*function guessComponent() {
-    //console.log("button clicked")
-    const guessView = <Guess
-                          input={guessWord}
-                          correctWord={correctWord}
-                          setGameOver={setGameOver}
-                          correctLetters={correctLetters}
-                          setCorrectLetters={setCorrectLetters}
-                          guessedLetters={guessedLetters}
-                          setGuessedLetters={setGuessedLetters}
-                          guessedWords={guessedWords}
-                          setGuessedWords={setGuessedWords}
-                        />
-
-    setDisplayGuesses(
-      guessView
-    );
-    console.log("1st time: " + displayGuesses)
-  }*/
+  const [displayGuesses, setDisplayGuesses] = useState();
 
   const guessView = (
     <Guess
@@ -79,8 +57,7 @@ export default function Main() {
   const submit = (
     <button
       type="Submit"
-      disabled={guessWord.length !== 5}
-      //onClick={() => guessComponent()}
+      disabled={guessWord.length !== 5 || gameOver === true}
       onClick={() => setDisplayGuesses(guessView)}
     >
       Submit
@@ -97,17 +74,6 @@ export default function Main() {
       <main>
         <h1 className="title">Wordle</h1>
         <p>project authors: team FROGFISH</p>
-        {/*<Guess
-        input={guessWord}
-        correctWord={correctWord}
-        setGameOver={setGameOver}
-        correctLetters={correctLetters}
-        setCorrectLetters={setCorrectLetters}
-        guessedLetters={guessedLetters}
-        setGuessedLetters={setGuessedLetters}
-        guessedWords={guessedWords}
-        setGuessedWords={setGuessedWords}
-        />*/}
         {displayGuesses}
         {inputBox}
         {submit}

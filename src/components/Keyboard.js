@@ -42,8 +42,6 @@ export default function Keyboard({ correctLetters, guessedLetters }) {
     };
   });
 
-  console.log(keyrow1);
-
   return (
     <div className={styles.keyboard}>
       <div className={styles.keyRow}>

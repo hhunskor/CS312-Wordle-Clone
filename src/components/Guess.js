@@ -18,6 +18,8 @@ function Guess({
     })
   );
 
+  correctWord = correctWord.toUpperCase();
+
   const correctLettersCopy = correctLetters.map((x) => x);
   const guessedLettersCopy = guessedLetters.map((z) => z);
 

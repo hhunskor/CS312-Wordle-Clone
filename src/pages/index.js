@@ -10,7 +10,9 @@ import Guess from "../components/Guess";
 import Keyboard from "../components/Keyboard";
 
 export default function Main() {
-  const [correctWord] = useState(testwords[Math.floor(Math.random() * testwords.length)])
+  const [correctWord] = useState(
+    testwords[Math.floor(Math.random() * testwords.length)]
+  );
 
   const [guessWord, setGuess] = useState("");
   const [gameOver, setGameOver] = useState(false);
@@ -46,7 +48,7 @@ export default function Main() {
       maxLength={5}
       placeholder={"Guess Here"}
       onChange={(event) => {
-        setGuess(event.target.value);
+        setGuess(event.target.value.toUpperCase());
       }}
     />
   );
@@ -74,25 +76,37 @@ export default function Main() {
 
       <main>
         <h1 className="title">A Middlebury Wordle Project</h1>
-        <p>Enter a 5 letter word in the input box to try to guess the correct word.</p>
+        <p>
+          Enter a 5 letter word in the input box to try to guess the correct
+          word.
+        </p>
         <div>{prettyPrintGuesses}</div>
-        <div style={{display:"none"}}>{displayGuesses}</div>
+        <div style={{ display: "none" }}>{displayGuesses}</div>
         {inputBox}
         {submit}
 
         <p>Correct Letters: {correctLetters}</p>
         <p>Guessed Letters: {guessedLetters}</p>
 
-        {gameOver ? <p><strong>You win!</strong> The correct word was <strong>{correctWord}</strong>. Play again by refreshing the page.</p> : <p>Start a new game by refreshing the page.</p>}
-
+        {gameOver ? (
+          <p>
+            <strong>You win!</strong> The correct word was{" "}
+            <strong>{correctWord}</strong>. Play again by refreshing the page.
+          </p>
+        ) : (
+          <p>Start a new game by refreshing the page.</p>
+        )}
       </main>
-      
+
       <Keyboard
         correctLetters={correctLetters}
         guessedLetters={guessedLetters}
       />
 
-      <footer>A 312 project | Authors: Team Frogfish Hannah, Addison, Wright, Hayden, Lucas, Jared, and Lizzie` </footer>
+      <footer>
+        A 312 project | Authors: Team Frogfish Hannah, Addison, Wright, Hayden,
+        Lucas, Jared, and Lizzie`{" "}
+      </footer>
     </div>
   );
 }

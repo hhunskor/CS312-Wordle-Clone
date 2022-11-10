@@ -53,10 +53,22 @@ export default function Main() {
     />
   );
 
+  function isValid() {
+    let valid = true;
+    if (
+      guessWord.length !== 5 ||
+      gameOver === true ||
+      !/^[a-zA-Z]+$/.test(guessWord)
+    ) {
+      valid = false;
+    }
+    return valid;
+  }
+
   const submit = (
     <button
       type="Submit"
-      disabled={guessWord.length !== 5 || gameOver === true}
+      disabled={!isValid()}
       onClick={() => {
         prettyPrintGuesses.push(`${guessWord}, `);
         setPrettyPrintGuesses(prettyPrintGuesses);

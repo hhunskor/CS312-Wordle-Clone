@@ -1,7 +1,7 @@
-//import Guess from "../components/Guess";
+import { render, screen } from "@testing-library/react";
 
 import testwords from "../../data/testwords.json";
-import guess from "../components/Guess";
+import Guess from "../components/Guess";
 
 test.skip("Placeholder test - replace with real tests", () => {
   test("Need to write tests");
@@ -32,3 +32,15 @@ describe.skip("guess: word is correct", () => {
 
 //describe.skip("guess: individual letters are in word");
 //check if individual letters are in the word
+
+// const correctWord = "chart";
+const sampleGuesses = ["lines", "bagel", "match", "chart"];
+
+describe.skip("Guesses render", () => {
+  test("Guesses populate after enter", () => {
+    sampleGuesses.forEach((sampleGuess) => {
+      render(<Guess guessedWords={sampleGuess} />);
+      expect(screen.getByText({ sampleGuess })).toBeVisible();
+    });
+  });
+});

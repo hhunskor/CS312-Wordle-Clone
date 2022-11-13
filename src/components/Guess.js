@@ -1,61 +1,59 @@
 import PropTypes from "prop-types";
-// import { useEffect } from "react";
 
-function Guess({
-  input,
-  correctWord,
-  setGameOver,
-  correctLetters,
-  setCorrectLetters,
-  guessedLetters,
-  setGuessedLetters,
-  guessedWords,
-  setGuessedWords,
-}) {
-  setGuessedWords(
-    [...guessedWords, input].map((word) => {
-      return <li key={word}>{word}</li>;
-    })
-  );
+import styles from "../styles/Guess.module.css";
 
-  correctWord = correctWord.toUpperCase();
+function Guess({ tiles }) {
+  const grid = [];
+  // console.log(tiles)
 
-  const correctLettersCopy = correctLetters.map((x) => x);
-  const guessedLettersCopy = guessedLetters.map((z) => z);
+  let tileNumber = 0;
+  for (let i = 0; i < 6; i++) {
+    const row = [];
+    for (let j = 0; j < 5; j++) {
+      let tile = (
+        <div className={styles.initBox} key={tileNumber}>
+          {" "}
+          {tiles[tileNumber].letter}{" "}
+        </div>
+      );
 
-  for (let index = 0; index < input.length; index++) {
-    const letter = input.charAt(index);
+      if (tiles[tileNumber].color === "gray") {
+        tile = (
+          <div className={styles.grayBox} key={tileNumber}>
+            {" "}
+            {tiles[tileNumber].letter}{" "}
+          </div>
+        );
+      } else if (tiles[tileNumber].color === "yellow") {
+        tile = (
+          <div className={styles.yellowBox} key={tileNumber}>
+            {" "}
+            {tiles[tileNumber].letter}{" "}
+          </div>
+        );
+      } else if (tiles[tileNumber].color === "green") {
+        tile = (
+          <div className={styles.greenBox} key={tileNumber}>
+            {" "}
+            {tiles[tileNumber].letter}{" "}
+          </div>
+        );
+      }
 
-    if (correctWord.includes(letter) && !correctLettersCopy.includes(letter)) {
-      correctLettersCopy.push(letter);
+      row.push(tile);
+      tileNumber += 1;
     }
-
-    if (!guessedLettersCopy.includes(letter)) {
-      guessedLettersCopy.push(letter);
-    }
+    grid.push(
+      <div className={styles.row} key={i}>
+        {row}
+      </div>
+    );
   }
-
-  setCorrectLetters(correctLettersCopy);
-  setGuessedLetters(guessedLettersCopy);
-
-  // check if word is correct
-  if (input === correctWord) {
-    setGameOver(true);
-  }
-
-  return <div>{guessedWords}</div>;
+  return <div id={styles.grid}>{grid}</div>;
+  // return (<div className = {styles.blackBox} > </div>)
 }
 
-Guess.propTypes = {
-  input: PropTypes.string.isRequired,
-  correctWord: PropTypes.string.isRequired,
-  setGameOver: PropTypes.func.isRequired,
-  correctLetters: PropTypes.arrayOf(PropTypes.string).isRequired,
-  setCorrectLetters: PropTypes.func.isRequired,
-  guessedLetters: PropTypes.arrayOf(PropTypes.string).isRequired,
-  setGuessedLetters: PropTypes.func.isRequired,
-  guessedWords: PropTypes.arrayOf(PropTypes.string).isRequired,
-  setGuessedWords: PropTypes.func.isRequired,
-};
-
 export default Guess;
+Guess.propTypes = {
+  tiles: PropTypes.arrayOf(PropTypes.object).isRequired,
+};

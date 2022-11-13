@@ -1,0 +1,56 @@
+#grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 7px;
+}
+.initBox {
+  display: inline-flex;
+  justify-content: center;
+  text-transform: uppercase;
+  margin-top: 3px;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 1px solid black;
+}
+.grayBox {
+  display: inline-flex;
+  justify-content: center;
+  text-transform: uppercase;
+  margin-top: 3px;
+  width: 40px;
+  height: 40px;
+  background-color: gray;
+  border-color: black;
+  border: 1px solid black;
+}
+.yellowBox {
+  display: inline-flex;
+  justify-content: center;
+  text-transform: uppercase;
+  margin-top: 3px;
+  width: 40px;
+  height: 40px;
+  background-color: yellow;
+  border-color: black;
+  border: 1px solid black;
+}
+.greenBox {
+  display: inline-flex;
+  justify-content: center;
+  text-transform: uppercase;
+  margin-top: 3px;
+  width: 40px;
+  height: 40px;
+  background-color: green;
+  border-color: black;
+  border: 1px solid black;
+}
+
+.row {
+  display: grid;
+  width: 100%;
+  grid-gap: 3px;
+  grid-template-columns: repeat(5, 1fr);
+}

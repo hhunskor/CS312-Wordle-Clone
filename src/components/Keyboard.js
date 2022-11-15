@@ -4,59 +4,97 @@
 import styles from "../styles/keyboard.module.css";
 import PropTypes from "prop-types";
 
-export default function Keyboard({ correctLetters, guessedLetters }) {
+export default function Keyboard({ alphabet }) {
+  // console.log(alphabet);
+
   const keyrow1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"].map(
     (letter) => {
-      return {
-        letter: letter,
-        color: guessedLetters.includes(letter)
-          ? correctLetters.includes(letter)
-            ? "green"
-            : "darkGray"
-          : "gray",
-      };
+      for (let i = 0; i < alphabet.length; i++) {
+        const alphLetter = alphabet[i];
+        let newColor = "gray";
+        if (letter === alphLetter.letter) {
+          if (alphLetter.guessedInPlace) {
+            newColor = "green";
+          } else if (alphLetter.guessedInWord) {
+            newColor = "yellow";
+          } else if (alphLetter.guessed) {
+            newColor = "darkGray";
+          }
+          return {
+            letter: letter,
+            color: newColor,
+          };
+        }
+      }
     }
   );
 
   const keyrow2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"].map(
     (letter) => {
-      return {
-        letter: letter,
-        color: guessedLetters.includes(letter)
-          ? correctLetters.includes(letter)
-            ? "green"
-            : "darkGray"
-          : "gray",
-      };
+      for (let i = 0; i < alphabet.length; i++) {
+        const alphLetter = alphabet[i];
+        let newColor = "gray";
+        if (letter === alphLetter.letter) {
+          if (alphLetter.guessedInPlace) {
+            newColor = "green";
+          } else if (alphLetter.guessedInWord) {
+            newColor = "yellow";
+          } else if (alphLetter.guessed) {
+            newColor = "darkGray";
+          }
+          return {
+            letter: letter,
+            color: newColor,
+          };
+        }
+      }
     }
   );
 
   const keyrow3 = ["Z", "X", "C", "V", "B", "N", "M"].map((letter) => {
-    return {
-      letter: letter,
-      color: guessedLetters.includes(letter)
-        ? correctLetters.includes(letter)
-          ? "green"
-          : "darkGray"
-        : "gray",
-    };
+    for (let i = 0; i < alphabet.length; i++) {
+      const alphLetter = alphabet[i];
+      let newColor = "gray";
+      if (letter === alphLetter.letter) {
+        if (alphLetter.guessedInPlace) {
+          newColor = "green";
+        } else if (alphLetter.guessedInWord) {
+          newColor = "yellow";
+        } else if (alphLetter.guessed) {
+          newColor = "darkGray";
+        }
+        return {
+          letter: letter,
+          color: newColor,
+        };
+      }
+    }
   });
+
+  console.log(keyrow1);
+  console.log(keyrow2);
+  console.log(keyrow3);
+
+  const keyStyle = (color) => {
+    let style = "";
+    if (color === "green") {
+      style = styles.greenKey;
+    } else if (color === "darkGray") {
+      style = styles.darkGrayKey;
+    } else if (color === "yellow") {
+      style = styles.yellowKey;
+    } else if (color === "gray") {
+      style = styles.grayKey;
+    }
+    return style;
+  };
 
   return (
     <div className={styles.keyboard}>
       <div className={styles.keyRow}>
         {keyrow1.map((x) => {
           return (
-            <button
-              className={
-                x.color !== "green"
-                  ? x.color === "darkGray"
-                    ? styles.darkGrayKey
-                    : styles.grayKey
-                  : styles.greenKey
-              }
-              key={`${x.letter}`}
-            >
+            <button className={keyStyle(x.color)} key={`${x.letter}`}>
               {x.letter}
             </button>
           );
@@ -66,16 +104,7 @@ export default function Keyboard({ correctLetters, guessedLetters }) {
       <div className={styles.keyRow}>
         {keyrow2.map((x) => {
           return (
-            <button
-              className={
-                x.color !== "green"
-                  ? x.color === "darkGray"
-                    ? styles.darkGrayKey
-                    : styles.grayKey
-                  : styles.greenKey
-              }
-              key={`${x.letter}`}
-            >
+            <button className={keyStyle(x.color)} key={`${x.letter}`}>
               {x.letter}
             </button>
           );
@@ -85,16 +114,7 @@ export default function Keyboard({ correctLetters, guessedLetters }) {
       <div className={styles.keyRow}>
         {keyrow3.map((x) => {
           return (
-            <button
-              className={
-                x.color !== "green"
-                  ? x.color === "darkGray"
-                    ? styles.darkGrayKey
-                    : styles.grayKey
-                  : styles.greenKey
-              }
-              key={`${x.letter}`}
-            >
+            <button className={keyStyle(x.color)} key={`${x.letter}`}>
               {x.letter}
             </button>
           );
@@ -105,6 +125,5 @@ export default function Keyboard({ correctLetters, guessedLetters }) {
 }
 
 Keyboard.propTypes = {
-  correctLetters: PropTypes.array.isRequired,
-  guessedLetters: PropTypes.array.isRequired,
+  alphabet: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

@@ -1,46 +1,187 @@
 import { render, screen } from "@testing-library/react";
 
-import testwords from "../../data/testwords.json";
 import Guess from "../components/Guess";
 
-test.skip("Placeholder test - replace with real tests", () => {
-  test("Need to write tests");
-});
+const tiles = [
+  {
+    tile: 0,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 1,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 2,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 3,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 4,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 5,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 6,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 7,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 8,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 9,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 10,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 11,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 12,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 13,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 14,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 15,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 16,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 17,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 18,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 19,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 20,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 21,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 22,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 23,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 24,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 25,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 26,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 27,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 28,
+    letter: "",
+    color: "black",
+  },
+  {
+    tile: 29,
+    letter: "",
+    color: "black",
+  },
+];
 
-const correctWord = testwords[0];
-
-describe.skip("guess: word is correct", () => {
-  test("word is correct", () => {
-    const correctWordGuess = testwords[0];
-
-    console.log(correctWord);
-    console.log(correctWordGuess.length);
-    console.log(typeof correctWord);
-    console.log(correctWordGuess);
-    console.log(correctWordGuess.length);
-    console.log(typeof correctWordGuess);
-
-    console.log(guess(correctWordGuess, correctWord));
-
-    const guessBool = guess(correctWordGuess, correctWord);
-
-    expect(guessBool[0]).toBeTruthy();
+describe("Guesses visibility", () => {
+  test("Smoke test", () => {
+    render(<Guess tiles={tiles} />);
+  });
+  test("Snapshot test", () => {
+    const { container } = render(<Guess tiles={tiles} />);
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
 
-//function tests if word is correct or not
-
-//describe.skip("guess: individual letters are in word");
-//check if individual letters are in the word
-
-// const correctWord = "chart";
 const sampleGuesses = ["lines", "bagel", "match", "chart"];
 
-describe.skip("Guesses render", () => {
-  test("Guesses populate after enter", () => {
+describe("Guesses render", () => {
+  test("Guesses populate based on tile elements", () => {
     sampleGuesses.forEach((sampleGuess) => {
-      render(<Guess guessedWords={sampleGuess} />);
-      expect(screen.getByText({ sampleGuess })).toBeVisible();
+      for (let i = 0; i < sampleGuess.length; i++) {
+        const guessedLetter = sampleGuess.charAt(i).toUpperCase();
+        tiles[i] = {
+          tile: i,
+          letter: guessedLetter,
+          color: "black",
+        };
+      }
+      render(<Guess tiles={tiles} />);
+      const uppercaseLetter = sampleGuess.charAt(0).toUpperCase();
+      // console.log(uppercaseLetter);
+      expect(screen.getByText({ uppercaseLetter })).toBeVisible();
     });
   });
 });

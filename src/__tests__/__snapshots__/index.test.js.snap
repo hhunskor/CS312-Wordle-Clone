@@ -13,27 +13,229 @@ exports[`Homepage visibility Snapshot test 1`] = `
     <p>
       Enter a 5 letter word in the input box to try to guess the correct word.
     </p>
-    <div />
-    <div
-      style="display: none;"
-    />
+    <div>
+      <div
+        id="grid"
+      >
+        <div
+          class="row"
+        >
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+        </div>
+        <div
+          class="row"
+        >
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+        </div>
+        <div
+          class="row"
+        >
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+        </div>
+        <div
+          class="row"
+        >
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+        </div>
+        <div
+          class="row"
+        >
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+        </div>
+        <div
+          class="row"
+        >
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+          <div
+            class="initBox"
+          >
+             
+             
+          </div>
+        </div>
+      </div>
+    </div>
     <input
+      data-testid="Input"
       maxlength="5"
       placeholder="Guess Here"
       type="text"
     />
     <button
+      data-testid="Submit"
       disabled=""
       type="Submit"
     >
       Submit
     </button>
-    <p>
-      Correct Letters: 
-    </p>
-    <p>
-      Guessed Letters: 
-    </p>
     <p>
       Start a new game by refreshing the page.
     </p>
@@ -185,7 +387,7 @@ exports[`Homepage visibility Snapshot test 1`] = `
     </div>
   </div>
   <footer>
-    A 312 project | Authors: Team Frogfish Hannah, Addison, Wright, Hayden, Lucas, Jared, and Lizzie\`
+    A 312 project | Authors: Team Frogfish Hannah, Addison, Wright, Hayden, Lucas, Jared, and Lizzie
      
   </footer>
 </div>

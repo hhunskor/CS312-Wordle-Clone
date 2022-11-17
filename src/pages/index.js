@@ -5,12 +5,16 @@ import PropTypes from "prop-types";
 import Guess from "../components/Guess";
 import Keyboard from "../components/Keyboard";
 import styles from "../styles/index.module.css";
-import testwords from "../../data/testwords.json";
+
+import words from "../../data/words.json";
 
 export default function Main({ alphabet, setAlphabet, tiles, setTiles }) {
   const [correctWord] = useState(
-    testwords[Math.floor(Math.random() * testwords.length)].toUpperCase()
+    words[Math.floor(Math.random() * words.length)].toUpperCase()
   );
+  const [arrayWords] = useState(words); // Unix standard 5 letter words from Mac
+
+  console.log(correctWord);
 
   const [guessWord, setGuess] = useState("");
   const [gameOver, setGameOver] = useState("false");
@@ -131,6 +135,7 @@ export default function Main({ alphabet, setAlphabet, tiles, setTiles }) {
   const inputBox = (
     <input
       value={guessWord}
+      data-testid="Input"
       disabled={gameOver === ("win" || "loss")}
       type="text"
       maxLength={5}
@@ -141,15 +146,19 @@ export default function Main({ alphabet, setAlphabet, tiles, setTiles }) {
     />
   );
 
+  /// checks that a word is a valid guess in that there are no spaces or special characters, the word is 5 letters, and that the word is
+  /// part of the mac stored dictionary of 5 letter words
   function isValidGuess() {
     let valid = true;
+    // looking at valid letters and word type
     if (
       guessWord.length !== 5 ||
-      gameOver === ("win" || "loss") ||
-      !/^[a-zA-Z]+$/.test(guessWord)
+      !/^[a-zA-Z]+$/.test(guessWord) ||
+      !arrayWords.includes(guessWord.toLowerCase())
     ) {
       valid = false;
     }
+
     return valid;
   }
 
@@ -170,9 +179,10 @@ export default function Main({ alphabet, setAlphabet, tiles, setTiles }) {
 
   const submit = (
     <button
+      data-testid="Submit"
       type="Submit"
       id="submitButton"
-      disabled={!isValidGuess()}
+      disabled={!isValidGuess() || gameOver === "loss" || gameOver === "win"}
       onClick={() => {
         guessComponent = updateTiles();
         updateAlphabet();

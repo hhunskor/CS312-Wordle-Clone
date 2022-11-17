@@ -1,0 +1,212 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Guesses visibility Snapshot test 1`] = `
+<div
+  id="grid"
+>
+  <div
+    class="row"
+  >
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+  </div>
+  <div
+    class="row"
+  >
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+  </div>
+  <div
+    class="row"
+  >
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+  </div>
+  <div
+    class="row"
+  >
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+  </div>
+  <div
+    class="row"
+  >
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+  </div>
+  <div
+    class="row"
+  >
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+    <div
+      class="initBox"
+    >
+       
+       
+    </div>
+  </div>
+</div>
+`;

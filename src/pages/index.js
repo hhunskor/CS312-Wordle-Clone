@@ -134,6 +134,7 @@ export default function Main({ alphabet, setAlphabet, tiles, setTiles }) {
 
   const inputBox = (
     <input
+      data-testid="Input"
       disabled={gameOver === ("win" || "loss")}
       type="text"
       maxLength={5}
@@ -151,7 +152,7 @@ export default function Main({ alphabet, setAlphabet, tiles, setTiles }) {
     // looking at valid letters and word type
     if (
       guessWord.length !== 5 ||
-      !/^[a-zA-Z]+$/.test(guessWord) || 
+      !/^[a-zA-Z]+$/.test(guessWord) ||
       !arrayWords.includes(guessWord.toLowerCase())
     ) {
       valid = false;
@@ -177,8 +178,9 @@ export default function Main({ alphabet, setAlphabet, tiles, setTiles }) {
 
   const submit = (
     <button
+      data-testid="Submit"
       type="Submit"
-      disabled={!isValidGuess() || (gameOver === "loss") || (gameOver === "win")}
+      disabled={!isValidGuess() || gameOver === "loss" || gameOver === "win"}
       onClick={() => {
         guessComponent = updateTiles();
         updateAlphabet();

@@ -38,7 +38,7 @@ export default function Keyboard({ alphabet, setGuess, guessWord }) {
     ["Z", "X", "C", "V", "B", "N", "M"],
   ].map((row) => {
     return (
-      <div className={styles.keyRow} key={keys.indexOf(row)}>
+      <div className={styles.keyRow} key={"row"}>
         {row.map((letter) => {
           /*if(letter === "enter"){
           return(

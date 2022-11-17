@@ -4,7 +4,7 @@
 import styles from "../styles/keyboard.module.css";
 import PropTypes from "prop-types";
 
-export default function Keyboard({ alphabet }) {
+export default function Keyboard({ alphabet, setGuess, guessWord }) {
   // console.log(alphabet);
 
   const keyrow1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"].map(
@@ -71,9 +71,9 @@ export default function Keyboard({ alphabet }) {
     }
   });
 
-  console.log(keyrow1);
-  console.log(keyrow2);
-  console.log(keyrow3);
+  //console.log(keyrow1);
+  //console.log(keyrow2);
+  //console.log(keyrow3);
 
   const keyStyle = (color) => {
     let style = "";
@@ -94,9 +94,16 @@ export default function Keyboard({ alphabet }) {
       <div className={styles.keyRow}>
         {keyrow1.map((x) => {
           return (
-            <button className={keyStyle(x.color)} key={`${x.letter}`}>
-              {x.letter}
-            </button>
+            <input
+              value={`${x.letter}`}
+              type="button"
+              className={keyStyle(x.color)}
+              key={`${x.letter}`}
+              onClick={() => {
+                setGuess(guessWord + x.letter.toUpperCase());
+              }}
+              disabled={guessWord.length === 5}
+            />
           );
         })}
       </div>
@@ -104,9 +111,16 @@ export default function Keyboard({ alphabet }) {
       <div className={styles.keyRow}>
         {keyrow2.map((x) => {
           return (
-            <button className={keyStyle(x.color)} key={`${x.letter}`}>
-              {x.letter}
-            </button>
+            <input
+              value={`${x.letter}`}
+              type="button"
+              className={keyStyle(x.color)}
+              key={`${x.letter}`}
+              onClick={() => {
+                setGuess(guessWord + x.letter.toUpperCase());
+              }}
+              disabled={guessWord.length === 5}
+            />
           );
         })}
       </div>
@@ -114,9 +128,16 @@ export default function Keyboard({ alphabet }) {
       <div className={styles.keyRow}>
         {keyrow3.map((x) => {
           return (
-            <button className={keyStyle(x.color)} key={`${x.letter}`}>
-              {x.letter}
-            </button>
+            <input
+              value={`${x.letter}`}
+              type="button"
+              className={keyStyle(x.color)}
+              key={`${x.letter}`}
+              onClick={() => {
+                setGuess(guessWord + x.letter.toUpperCase());
+              }}
+              disabled={guessWord.length === 5}
+            />
           );
         })}
       </div>
@@ -126,4 +147,6 @@ export default function Keyboard({ alphabet }) {
 
 Keyboard.propTypes = {
   alphabet: PropTypes.arrayOf(PropTypes.object).isRequired,
+  setGuess: PropTypes.func.isRequired,
+  guessWord: PropTypes.string.isRequired,
 };

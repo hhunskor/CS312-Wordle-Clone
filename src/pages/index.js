@@ -130,6 +130,7 @@ export default function Main({ alphabet, setAlphabet, tiles, setTiles }) {
 
   const inputBox = (
     <input
+      value={guessWord}
       disabled={gameOver === ("win" || "loss")}
       type="text"
       maxLength={5}
@@ -186,7 +187,6 @@ export default function Main({ alphabet, setAlphabet, tiles, setTiles }) {
         <title>Wordle Project</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main>
         <h1 className="title">A Middlebury Wordle Project</h1>
         <p>
@@ -194,18 +194,20 @@ export default function Main({ alphabet, setAlphabet, tiles, setTiles }) {
           word.
         </p>
         <div>{guessComponent}</div>
-        {inputBox}
-        {submit}
-
+        <div>
+          {inputBox} {submit}
+        </div>
         {winLossMessage()}
+        <Keyboard
+          alphabet={alphabet}
+          setGuess={setGuess}
+          guessWord={guessWord}
+        />
+        <footer>
+          A 312 project | Authors: Team Frogfish Hannah, Addison, Wright,
+          Hayden, Lucas, Jared, and Lizzie{" "}
+        </footer>
       </main>
-
-      <Keyboard alphabet={alphabet} />
-
-      <footer>
-        A 312 project | Authors: Team Frogfish Hannah, Addison, Wright, Hayden,
-        Lucas, Jared, and Lizzie{" "}
-      </footer>
     </div>
   );
 }

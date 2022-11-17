@@ -6,6 +6,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
 }
 
 .darkGrayKey {
@@ -16,6 +17,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
 }
 
 .greenKey {
@@ -26,6 +28,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
 }
 
 .yellowKey {
@@ -33,6 +36,17 @@
   background-color: yellow;
   height: 50px;
   width: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.enterKey {
+  color: white;
+  background-color: gray;
+  height: 50px;
+  width: 80px;
   display: inline-flex;
   justify-content: center;
   align-items: center;

@@ -171,6 +171,7 @@ export default function Main({ alphabet, setAlphabet, tiles, setTiles }) {
   const submit = (
     <button
       type="Submit"
+      id="submitButton"
       disabled={!isValidGuess()}
       onClick={() => {
         guessComponent = updateTiles();

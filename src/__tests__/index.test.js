@@ -131,10 +131,10 @@ describe("Submit button updates", () => {
     const submit = screen.getByTestId("Submit");
 
     fireEvent.change(inputBox, {
-      target: { value: firstGuess },
+      target: { value: firstGuess.toUpperCase() },
     });
 
-    expect(inputBox.value).toBe("guess");
+    expect(inputBox.value).toBe("GUESS");
 
     fireEvent.click(submit);
     const newTiles = setTilesMock.mock.calls[0][0];
@@ -157,10 +157,10 @@ describe("Submit button updates", () => {
     const submit = screen.getByTestId("Submit");
 
     fireEvent.change(inputBox, {
-      target: { value: firstGuess },
+      target: { value: firstGuess.toUpperCase() },
     });
 
-    expect(inputBox.value).toBe("guess");
+    expect(inputBox.value).toBe("GUESS");
 
     fireEvent.click(submit);
     const newAlphabet = setAlphabetMock.mock.calls[0][0];

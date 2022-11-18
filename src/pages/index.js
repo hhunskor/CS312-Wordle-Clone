@@ -1,27 +1,26 @@
 import Head from "next/head";
 import { useState } from "react";
 import PropTypes from "prop-types";
-
 import Guess from "../components/Guess";
 import Keyboard from "../components/Keyboard";
 import styles from "../styles/index.module.css";
 
-import words from "../../data/words.json";
-
-export default function Main({ alphabet, setAlphabet, tiles, setTiles }) {
-  const [correctWord] = useState(
-    words[Math.floor(Math.random() * words.length)].toUpperCase()
-  );
-  const [arrayWords] = useState(words); // Unix standard 5 letter words from Mac
-
+export default function Main({
+  arrayWords,
+  correctWord,
+  alphabet,
+  setAlphabet,
+  tiles,
+  setTiles,
+}) {
   console.log(correctWord);
 
   const [guessWord, setGuess] = useState("");
   const [gameOver, setGameOver] = useState("false");
 
-  const guessComponent = <Guess tiles={tiles} />;
+  let guessComponent = <Guess tiles={tiles} />;
 
-  const tilesCopy = tiles.map((x) => x);
+  let tilesCopy = tiles.map((x) => x);
   // changes data in tiles file, called for "submit" onClick
   const updateTiles = () => {
     let startIndex = 0;
@@ -43,7 +42,6 @@ export default function Main({ alphabet, setAlphabet, tiles, setTiles }) {
       if (guessedLetter === trueLetter) {
         color = "green";
       }
-      // console.log(tiles)
       tilesCopy = tilesCopy.map((x) => {
         if (tile === x.tile) {
           return {
@@ -61,6 +59,8 @@ export default function Main({ alphabet, setAlphabet, tiles, setTiles }) {
       });
     }
     setTiles(tilesCopy);
+    console.log(tilesCopy);
+
     // check for win or loss
     if (guessWord === correctWord) {
       setGameOver("win");
@@ -97,40 +97,8 @@ export default function Main({ alphabet, setAlphabet, tiles, setTiles }) {
       }
       return newLetter;
     });
-    console.log(alphabetCopy);
     setAlphabet(alphabetCopy);
   };
-
-  // const updateAlphabet = () => {
-  //   for (let i = 0; i < guessWord.length; i++) {
-  //     const guessedLetter = guessWord.charAt(i);
-  //     const trueLetter = correctWord.charAt(i);
-  //     let guessedInWord = false;
-  //     let guessedInPlace = false;
-
-  //     const alphabetCopy = alphabet.map((x) => {
-  //       if (x.letter === guessedLetter) {
-  //         if (x.guessedInWord === true || correctWord.includes(guessedLetter)) {
-  //           guessedInWord = true;
-  //         }
-  //         if (x.guessedInPlace === true || guessedLetter === trueLetter) {
-  //           guessedInPlace = true;
-  //         }
-  //         return ({
-  //           "letter": guessedLetter,
-  //           "guessed": true,
-  //           "guessedInWord": guessedInWord,
-  //           "guessedInPlace": guessedInPlace
-  //         })
-  //       } else{
-  //         return x;
-  //       }
-  //     });
-  //     console.log(alphabetCopy)
-  //     setAlphabet(alphabetCopy);
-
-  //   }
-  // };
 
   const inputBox = (
     <input
@@ -220,6 +188,8 @@ export default function Main({ alphabet, setAlphabet, tiles, setTiles }) {
 }
 
 Main.propTypes = {
+  arrayWords: PropTypes.arrayOf(PropTypes.string).isRequired,
+  correctWord: PropTypes.string.isRequired,
   alphabet: PropTypes.arrayOf(PropTypes.object).isRequired,
   setAlphabet: PropTypes.func.isRequired,
   tiles: PropTypes.arrayOf(PropTypes.object).isRequired,

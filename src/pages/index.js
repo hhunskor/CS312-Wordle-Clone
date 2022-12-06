@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Guess from "../components/Guess";
 import Keyboard from "../components/Keyboard";
 import styles from "../styles/index.module.css";
+import Popup from "../components/Popup";
 
 export default function Main({
   arrayWords,
@@ -172,6 +173,7 @@ export default function Main({
           Enter a 5 letter word in the input box to try to guess the correct
           word.
         </p>
+        {gameOver !== "false" ? <Popup /> : undefined}
         <div>{guessComponent}</div>
         <div>
           {inputBox} {submit}

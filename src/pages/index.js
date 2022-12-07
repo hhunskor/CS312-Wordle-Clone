@@ -18,6 +18,7 @@ export default function Main({
 
   const [guessWord, setGuess] = useState("");
   const [gameOver, setGameOver] = useState("false");
+  const [showStats, setShowStats] = useState(false);
 
   let guessComponent = <Guess tiles={tiles} />;
 
@@ -60,13 +61,15 @@ export default function Main({
       });
     }
     setTiles(tilesCopy);
-    console.log(tilesCopy);
+    // console.log(tilesCopy);
 
     // check for win or loss
     if (guessWord === correctWord) {
       setGameOver("win");
+      setShowStats(true);
     } else if (tilesCopy[29].letter !== "") {
       setGameOver("loss");
+      setShowStats(true);
     }
 
     return <Guess tiles={tiles} />;
@@ -131,21 +134,6 @@ export default function Main({
     return valid;
   }
 
-  const winLossMessage = () => {
-    if (gameOver === "win") {
-      return (
-        <p>
-          <strong>You win!</strong> The correct word was{" "}
-          <strong>{correctWord}</strong>. Play again by refreshing the page.
-        </p>
-      );
-    } else if (gameOver === "loss") {
-      return <p>Out of guesses! Play again by refreshing the page.</p>;
-    } else {
-      return <p>Start a new game by refreshing the page.</p>;
-    }
-  };
-
   const submit = (
     <button
       data-testid="Submit"
@@ -161,8 +149,22 @@ export default function Main({
     </button>
   );
 
+  const statsButton = (
+    <button
+      type="Submit"
+      id="statsButton"
+      hidden={gameOver === "false"}
+      onClick={() => {
+        setShowStats(true);
+      }}
+    >
+      Stats
+    </button>
+  );
+
   return (
     <div className={styles.container}>
+      {statsButton}
       <Head>
         <title>Wordle Project</title>
         <link rel="icon" href="/favicon.ico" />
@@ -173,12 +175,17 @@ export default function Main({
           Enter a 5 letter word in the input box to try to guess the correct
           word.
         </p>
-        {gameOver !== "false" ? <Popup /> : undefined}
+        {showStats ? (
+          <Popup
+            gameOver={gameOver}
+            correctWord={correctWord}
+            setShowStats={setShowStats}
+          />
+        ) : undefined}
         <div>{guessComponent}</div>
         <div>
           {inputBox} {submit}
         </div>
-        {winLossMessage()}
         <Keyboard
           alphabet={alphabet}
           setGuess={setGuess}

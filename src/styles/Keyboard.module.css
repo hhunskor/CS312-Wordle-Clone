@@ -33,7 +33,7 @@
 
 .yellowKey {
   color: white;
-  background-color: yellow;
+  background-color: rgb(196, 196, 51);
   height: 50px;
   width: 40px;
   display: inline-flex;

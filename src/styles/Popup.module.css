@@ -18,6 +18,7 @@
 }
 .closeBtn {
   position: absolute;
+  right: 10px;
   top: 16px;
   bottom: 16px;
 }

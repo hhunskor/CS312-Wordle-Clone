@@ -1,6 +1,6 @@
 //Keyboard component
 
-import styles from "../styles/keyboard.module.css";
+import styles from "../styles/Keyboard.module.css";
 import PropTypes from "prop-types";
 
 export default function Keyboard({ alphabet, setGuess, guessWord }) {

@@ -31,7 +31,8 @@ export default function Main({
     if (
       guessWord.length !== 5 ||
       !/^[a-zA-Z]+$/.test(guessWord) ||
-      !arrayWords.includes(guessWord.toLowerCase())
+      !arrayWords.includes(guessWord.toLowerCase()) ||
+      gameOver !== "false"
     ) {
       valid = false;
     }

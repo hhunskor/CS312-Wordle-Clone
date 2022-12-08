@@ -23,6 +23,22 @@ export default function Main({
   const [gameOver, setGameOver] = useState("false");
   const [showStats, setShowStats] = useState(false);
 
+  /// checks that a word is a valid guess in that there are no spaces or special characters, the word is 5 letters, and that the word is
+  /// part of the mac stored dictionary of 5 letter words
+  function isValidGuess() {
+    let valid = true;
+    // looking at valid letters and word type
+    if (
+      guessWord.length !== 5 ||
+      !/^[a-zA-Z]+$/.test(guessWord) ||
+      !arrayWords.includes(guessWord.toLowerCase())
+    ) {
+      valid = false;
+    }
+
+    return valid;
+  }
+
   let guessComponent = <Guess tiles={tiles} />;
 
   let tilesCopy = tiles.map((x) => x);
@@ -128,8 +144,10 @@ export default function Main({
   };
 
   const handleSubmit = () => {
-    guessComponent = updateTiles();
-    updateAlphabet();
+    if (isValidGuess() === true) {
+      guessComponent = updateTiles();
+      updateAlphabet();
+    }
   };
 
   const handleKeyPress = (e) => {
@@ -152,22 +170,6 @@ export default function Main({
       onKeyDown={(e) => handleKeyPress(e)}
     />
   );
-
-  /// checks that a word is a valid guess in that there are no spaces or special characters, the word is 5 letters, and that the word is
-  /// part of the mac stored dictionary of 5 letter words
-  function isValidGuess() {
-    let valid = true;
-    // looking at valid letters and word type
-    if (
-      guessWord.length !== 5 ||
-      !/^[a-zA-Z]+$/.test(guessWord) ||
-      !arrayWords.includes(guessWord.toLowerCase())
-    ) {
-      valid = false;
-    }
-
-    return valid;
-  }
 
   const submit = (
     <button

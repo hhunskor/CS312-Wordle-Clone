@@ -14,11 +14,30 @@ export default function Main({
   tiles,
   setTiles,
 }) {
+  const [startTime] = useState(Date.now());
+  let endTime;
   console.log(correctWord);
 
+  const [time, setTime] = useState(undefined);
   const [guessWord, setGuess] = useState("");
   const [gameOver, setGameOver] = useState("false");
   const [showStats, setShowStats] = useState(false);
+
+  /// checks that a word is a valid guess in that there are no spaces or special characters, the word is 5 letters, and that the word is
+  /// part of the mac stored dictionary of 5 letter words
+  function isValidGuess() {
+    let valid = true;
+    // looking at valid letters and word type
+    if (
+      guessWord.length !== 5 ||
+      !/^[a-zA-Z]+$/.test(guessWord) ||
+      !arrayWords.includes(guessWord.toLowerCase())
+    ) {
+      valid = false;
+    }
+
+    return valid;
+  }
 
   let guessComponent = <Guess tiles={tiles} />;
 
@@ -101,9 +120,29 @@ export default function Main({
 
     // check for win or loss
     if (guessWord === correctWord) {
+      endTime = Date.now();
+      const gameTime = endTime - startTime;
+      const seconds = Math.floor((gameTime / 1000) % 60);
+      const minutes = Math.floor((gameTime / (1000 * 60)) % 60);
+      const hours = Math.floor((gameTime / (1000 * 60 * 60)) % 24);
+
+      setTime(
+        `You solved in: ${hours} hours, ${minutes} minutes, and ${seconds} seconds`
+      );
+
       setGameOver("win");
       setShowStats(true);
     } else if (tilesCopy[29].letter !== "") {
+      endTime = Date.now();
+      const gameTime = endTime - startTime;
+      const seconds = Math.floor((gameTime / 1000) % 60);
+      const minutes = Math.floor((gameTime / (1000 * 60)) % 60);
+      const hours = Math.floor((gameTime / (1000 * 60 * 60)) % 24);
+
+      setTime(
+        `You failed to solve in: ${hours} hours, ${minutes} minutes, and ${seconds} seconds`
+      );
+
       setGameOver("loss");
       setShowStats(true);
     }
@@ -140,6 +179,19 @@ export default function Main({
     setAlphabet(alphabetCopy);
   };
 
+  const handleSubmit = () => {
+    if (isValidGuess() === true) {
+      guessComponent = updateTiles();
+      updateAlphabet();
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.keyCode === 13) {
+      handleSubmit();
+    }
+  };
+
   const inputBox = (
     <input
       value={guessWord}
@@ -151,24 +203,9 @@ export default function Main({
       onChange={(event) => {
         setGuess(event.target.value.toUpperCase());
       }}
+      onKeyDown={(e) => handleKeyPress(e)}
     />
   );
-
-  /// checks that a word is a valid guess in that there are no spaces or special characters, the word is 5 letters, and that the word is
-  /// part of the mac stored dictionary of 5 letter words
-  function isValidGuess() {
-    let valid = true;
-    // looking at valid letters and word type
-    if (
-      guessWord.length !== 5 ||
-      !/^[a-zA-Z]+$/.test(guessWord) ||
-      !arrayWords.includes(guessWord.toLowerCase())
-    ) {
-      valid = false;
-    }
-
-    return valid;
-  }
 
   const submit = (
     <button
@@ -177,8 +214,7 @@ export default function Main({
       id="submitButton"
       disabled={!isValidGuess() || gameOver === "loss" || gameOver === "win"}
       onClick={() => {
-        guessComponent = updateTiles();
-        updateAlphabet();
+        handleSubmit();
       }}
     >
       Submit
@@ -215,6 +251,7 @@ export default function Main({
           <Popup
             gameOver={gameOver}
             correctWord={correctWord}
+            time={time}
             setShowStats={setShowStats}
           />
         ) : undefined}

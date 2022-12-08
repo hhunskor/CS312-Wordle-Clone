@@ -75,13 +75,7 @@ export default function Main({
       const hours = Math.floor((gameTime / (1000 * 60 * 60)) % 24);
 
       setTime(
-        `You solved in: ${ 
-          hours 
-          } hours, ${ 
-          minutes 
-          } minutes, and ${ 
-          seconds 
-          } seconds`
+        `You solved in: ${hours} hours, ${minutes} minutes, and ${seconds} seconds`
       );
 
       setGameOver("win");
@@ -94,13 +88,7 @@ export default function Main({
       const hours = Math.floor((gameTime / (1000 * 60 * 60)) % 24);
 
       setTime(
-        `You failed to solve in: ${ 
-          hours 
-          } hours, ${ 
-          minutes 
-          } minutes, and ${ 
-          seconds 
-          } seconds`
+        `You failed to solve in: ${hours} hours, ${minutes} minutes, and ${seconds} seconds`
       );
 
       setGameOver("loss");
@@ -139,6 +127,17 @@ export default function Main({
     setAlphabet(alphabetCopy);
   };
 
+  const handleSubmit = () => {
+    guessComponent = updateTiles();
+    updateAlphabet();
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.keyCode === 13) {
+      handleSubmit();
+    }
+  };
+
   const inputBox = (
     <input
       value={guessWord}
@@ -150,6 +149,7 @@ export default function Main({
       onChange={(event) => {
         setGuess(event.target.value.toUpperCase());
       }}
+      onKeyDown={(e) => handleKeyPress(e)}
     />
   );
 
@@ -176,8 +176,7 @@ export default function Main({
       id="submitButton"
       disabled={!isValidGuess() || gameOver === "loss" || gameOver === "win"}
       onClick={() => {
-        guessComponent = updateTiles();
-        updateAlphabet();
+        handleSubmit();
       }}
     >
       Submit

@@ -1,5 +1,6 @@
-//import Popup from "./Popup";
-import { render } from "@testing-library/react";
+import Popup from "./Popup";
+import ReactTestUtils from "react-dom/test-utils";
+//import { render } from "@testing-library/react";
 import Main from "../pages/index";
 import words from "../../data/words.json";
 import tiles from "../../data/tiles.json";
@@ -13,6 +14,7 @@ describe("Popup visibility", () => {
   beforeEach(() => {
     testAlphabet = alphabet.map((x) => ({ ...x }));
     testTiles = tiles.map((x) => ({ ...x }));
+
     main = render(
       <Main
         arrayWords={words}
@@ -25,7 +27,14 @@ describe("Popup visibility", () => {
     );
   });
 
-  test("Main renders (placeholder test so suite passes before I add more)", () => {
-    expect(main).toBeVisible;
+  test.skip("popup is not visible initially", () => {
+    main.setState({ setShowStats: false });
+    expect(main.state("setShowStats")).toBe(false);
+  });
+
+  test.skip("popup is visible after game is over", () => {
+    main.setState({ setShowStats: true });
+    const popup = ReactTestUtils.findRenderedComponentWithType(main, Popup);
+    expect(popup).toBeDefined();
   });
 });

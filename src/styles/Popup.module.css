@@ -10,6 +10,8 @@
   justify-content: center;
 }
 .popupInner {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1em;
   position: relative;
   padding: 32px;
   width: 100%;

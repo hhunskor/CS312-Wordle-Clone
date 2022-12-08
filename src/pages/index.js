@@ -184,6 +184,7 @@ export default function Main({
     if (isValidGuess() === true) {
       guessComponent = updateTiles();
       updateAlphabet();
+      setGuess("");
     }
   };
 

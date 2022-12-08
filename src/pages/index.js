@@ -14,8 +14,11 @@ export default function Main({
   tiles,
   setTiles,
 }) {
+  const [startTime] = useState(Date.now());
+  let endTime;
   console.log(correctWord);
 
+  const [time, setTime] = useState(undefined);
   const [guessWord, setGuess] = useState("");
   const [gameOver, setGameOver] = useState("false");
   const [showStats, setShowStats] = useState(false);
@@ -65,9 +68,41 @@ export default function Main({
 
     // check for win or loss
     if (guessWord === correctWord) {
+      endTime = Date.now();
+      const gameTime = endTime - startTime;
+      const seconds = Math.floor((gameTime / 1000) % 60);
+      const minutes = Math.floor((gameTime / (1000 * 60)) % 60);
+      const hours = Math.floor((gameTime / (1000 * 60 * 60)) % 24);
+
+      setTime(
+        `You solved in: ${ 
+          hours 
+          } hours, ${ 
+          minutes 
+          } minutes, and ${ 
+          seconds 
+          } seconds`
+      );
+
       setGameOver("win");
       setShowStats(true);
     } else if (tilesCopy[29].letter !== "") {
+      endTime = Date.now();
+      const gameTime = endTime - startTime;
+      const seconds = Math.floor((gameTime / 1000) % 60);
+      const minutes = Math.floor((gameTime / (1000 * 60)) % 60);
+      const hours = Math.floor((gameTime / (1000 * 60 * 60)) % 24);
+
+      setTime(
+        `You failed to solve in: ${ 
+          hours 
+          } hours, ${ 
+          minutes 
+          } minutes, and ${ 
+          seconds 
+          } seconds`
+      );
+
       setGameOver("loss");
       setShowStats(true);
     }
@@ -179,6 +214,7 @@ export default function Main({
           <Popup
             gameOver={gameOver}
             correctWord={correctWord}
+            time={time}
             setShowStats={setShowStats}
           />
         ) : undefined}

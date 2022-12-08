@@ -2,17 +2,23 @@ import PropTypes from "prop-types";
 
 import styles from "../styles/Popup.module.css";
 
-export default function Popup({ gameOver, correctWord, setShowStats }) {
+export default function Popup({ gameOver, time, correctWord, setShowStats }) {
   const endMessage = () => {
     if (gameOver === "win") {
       return (
         <p>
           <strong>You win!</strong> The correct word was{" "}
           <strong>{correctWord}</strong>. Play again by refreshing the page.
+          <p>{time}</p>
         </p>
       );
     } else {
-      return <p>Out of guesses! Play again by refreshing the page.</p>;
+      return (
+        <p>
+          Out of guesses! Play again by refreshing the page.
+          <p>{time}</p>
+        </p>
+      );
     }
   };
 
@@ -34,6 +40,7 @@ export default function Popup({ gameOver, correctWord, setShowStats }) {
 }
 
 Popup.propTypes = {
+  time: PropTypes.string,
   gameOver: PropTypes.string.isRequired,
   correctWord: PropTypes.string.isRequired,
   setShowStats: PropTypes.bool.isRequired,

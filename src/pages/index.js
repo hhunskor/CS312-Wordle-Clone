@@ -33,17 +33,21 @@ export default function Main({
       }
     }
 
+    let remainingGuessLetters = correctWord.slice();
     for (let i = 0; i < guessWord.length; i++) {
       const tile = i + startIndex;
       let color = "gray";
       const guessedLetter = guessWord.charAt(i);
       const trueLetter = correctWord.charAt(i);
-      if (correctWord.includes(guessedLetter)) {
-        color = "yellow";
-      }
+
       if (guessedLetter === trueLetter) {
         color = "green";
+        remainingGuessLetters = remainingGuessLetters.replace(
+          guessedLetter,
+          ""
+        );
       }
+
       tilesCopy = tilesCopy.map((x) => {
         if (tile === x.tile) {
           return {
@@ -60,8 +64,40 @@ export default function Main({
         }
       });
     }
+    for (let i = 0; i < guessWord.length; i++) {
+      const tile = i + startIndex;
+      const guessedLetter = guessWord.charAt(i);
+      const trueLetter = correctWord.charAt(i);
+
+      let color = "gray";
+      if (
+        remainingGuessLetters.includes(guessedLetter) &&
+        guessedLetter !== trueLetter
+      ) {
+        color = "yellow";
+        remainingGuessLetters = remainingGuessLetters.replace(
+          guessedLetter,
+          ""
+        );
+      }
+
+      tilesCopy = tilesCopy.map((x) => {
+        if (tile === x.tile && x.color !== ("green" || "yellow")) {
+          return {
+            tile: tile,
+            letter: guessedLetter,
+            color: color,
+          };
+        } else {
+          return {
+            tile: x.tile,
+            letter: x.letter,
+            color: x.color,
+          };
+        }
+      });
+    }
     setTiles(tilesCopy);
-    // console.log(tilesCopy);
 
     // check for win or loss
     if (guessWord === correctWord) {

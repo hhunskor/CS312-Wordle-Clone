@@ -36,5 +36,5 @@ export default function Popup({ gameOver, correctWord, setShowStats }) {
 Popup.propTypes = {
   gameOver: PropTypes.string.isRequired,
   correctWord: PropTypes.string.isRequired,
-  setShowStats: PropTypes.bool.isRequired,
+  setShowStats: PropTypes.func.isRequired,
 };

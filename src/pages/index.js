@@ -205,7 +205,7 @@ export default function Main({
       disabled={gameOver !== "false"}
       type="text"
       maxLength={5}
-      placeholder={"GUESS"}
+      //placeholder={"INPUT"}
       onChange={(event) => {
         setGuess(event.target.value.toUpperCase());
       }}
@@ -215,6 +215,7 @@ export default function Main({
 
   const statsButton = (
     <button
+      className={styles.stats}
       type="Submit"
       id="statsButton"
       hidden={gameOver === "false"}

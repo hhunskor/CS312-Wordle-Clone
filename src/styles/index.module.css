@@ -6,3 +6,7 @@
   justify-content: center;
   align-items: center;
 }
+.input {
+  height: 30px;
+  align-items: center;
+}

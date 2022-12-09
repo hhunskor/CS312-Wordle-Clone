@@ -194,15 +194,18 @@ export default function Main({
     }
   };
 
+  // still want to autoFocus this element and get rid of cursor and blue highlight around box
   const inputBox = (
     <input
-      className={styles.input}
+      ref={(input) => input && input.focus()}
+      className={styles.inputBox}
       value={guessWord}
       data-testid="Input"
+      id="inputBox"
       disabled={gameOver !== "false"}
       type="text"
       maxLength={5}
-      placeholder={"Guess Here"}
+      placeholder={"GUESS"}
       onChange={(event) => {
         setGuess(event.target.value.toUpperCase());
       }}
@@ -222,7 +225,6 @@ export default function Main({
       Stats
     </button>
   );
-
   return (
     <div className={styles.container} data-testid="container">
       {statsButton}

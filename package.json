@@ -22,9 +22,13 @@
     "build": "next build",
     "export": "next export",
     "start": "next start",
-    "test": "jest",
     "lint": "eslint src",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "dev:emulate": "NEXT_PUBLIC_EMULATE=true next dev",
+    "emulator": "firebase emulators:start",
+    "test": "NEXT_PUBLIC_EMULATE=true jest --runInBand",
+    "test:ci": "firebase emulators:exec 'npm test --runInBand'",
+    "seed": "NEXT_PUBLIC_EMULATE=true node src/utils/seed-database.mjs data/films.json"
   },
   "dependencies": {
     "firebase": "^9.13.0",

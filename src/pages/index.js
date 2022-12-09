@@ -224,7 +224,7 @@ export default function Main({
   );
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid="container">
       {statsButton}
       <Head>
         <title>Wordle Project</title>

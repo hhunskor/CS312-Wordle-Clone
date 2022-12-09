@@ -6,3 +6,12 @@
   justify-content: center;
   align-items: center;
 }
+
+.inputBox {
+  caret-color: transparent;
+  outline: none;
+  height: 50px;
+  width: 300px;
+  font-size: 50px;
+  letter-spacing: 30px;
+}

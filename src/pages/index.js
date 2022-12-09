@@ -184,6 +184,7 @@ export default function Main({
     if (isValidGuess() === true) {
       guessComponent = updateTiles();
       updateAlphabet();
+      setGuess("");
     }
   };
 
@@ -201,7 +202,7 @@ export default function Main({
       value={guessWord}
       data-testid="Input"
       id="inputBox"
-      disabled={gameOver === ("win" || "loss")}
+      disabled={gameOver !== "false"}
       type="text"
       maxLength={5}
       placeholder={"GUESS"}
@@ -210,20 +211,6 @@ export default function Main({
       }}
       onKeyDown={(e) => handleKeyPress(e)}
     />
-  );
-
-  const submit = (
-    <button
-      data-testid="Submit"
-      type="Submit"
-      id="submitButton"
-      disabled={!isValidGuess() || gameOver === "loss" || gameOver === "win"}
-      onClick={() => {
-        handleSubmit();
-      }}
-    >
-      Submit
-    </button>
   );
 
   const statsButton = (
@@ -239,7 +226,7 @@ export default function Main({
     </button>
   );
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid="container">
       {statsButton}
       <Head>
         <title>Wordle Project</title>
@@ -260,9 +247,7 @@ export default function Main({
           />
         ) : undefined}
         <div>{guessComponent}</div>
-        <div>
-          {inputBox} {submit}
-        </div>
+        <div>{inputBox}</div>
         <Keyboard
           alphabet={alphabet}
           setGuess={setGuess}

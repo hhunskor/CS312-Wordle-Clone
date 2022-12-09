@@ -8,10 +8,17 @@
 }
 
 .inputBox {
-  caret-color: transparent;
   outline: none;
   height: 50px;
-  width: 300px;
-  font-size: 50px;
-  letter-spacing: 30px;
+  width: 310px;
+  font-size: 52px;
+  letter-spacing: 22px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.stats {
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }

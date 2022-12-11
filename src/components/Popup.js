@@ -16,12 +16,12 @@ export default function Popup({ gameOver, time, correctWord, setShowStats }) {
   const endMessage = () => {
     if (gameOver === "win") {
       return (
-        <p>
+        <div>
           <strong>You win!</strong> The correct word was{" "}
           <strong>{correctWord}</strong>. Play again!
           <p>{time}</p>
           <p>{middWord}</p>
-        </p>
+        </div>
       );
     } else {
       return (

@@ -4,9 +4,12 @@ import { useState } from "react";
 import letterData from "../../data/alphabet.json";
 import guessData from "../../data/tiles.json";
 import words from "../../data/words.json";
-import answers from "../../data/answersDict.json";
+//import testwords from "../../data/testwords.json";
+import answers from "../../data/correctWords.json";
+import { initializeFirebase } from "../utils/firebase-utils.mjs";
 
 function MainApp({ Component, pageProps }) {
+  initializeFirebase();
   const [alphabet, setAlphabet] = useState(letterData);
   const [tiles, setTiles] = useState(guessData);
   const [arrayWords] = useState(words); // Unix standard 5 letter words from Mac

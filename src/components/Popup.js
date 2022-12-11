@@ -4,7 +4,19 @@ import styles from "../styles/Popup.module.css";
 
 import answers from "../../data/answersDict.json";
 
-export default function Popup({ gameOver, time, correctWord, setShowStats }) {
+export default function Popup({
+  gameOver,
+  time,
+  correctWord,
+  stats,
+  setShowStats,
+}) {
+  const { avgTime } = stats;
+  const seconds = Math.floor((avgTime / 1000) % 60);
+  const minutes = Math.floor((avgTime / (1000 * 60)) % 60);
+  const hours = Math.floor((avgTime / (1000 * 60 * 60)) % 24);
+
+  const avgTimeString = `${hours} hours, ${minutes} minutes, and ${seconds} seconds`;
   const wordData = answers.find((obj) => {
     return obj.word.toUpperCase() === correctWord;
   });
@@ -20,7 +32,15 @@ export default function Popup({ gameOver, time, correctWord, setShowStats }) {
           <strong>You win!</strong> The correct word was{" "}
           <strong>{correctWord}</strong>. Play again!
           <p>{time}</p>
+          <p>{stats.playerCount} Players have attempted this word. </p>
+          <p>
+            {stats.correctCount}, or, {stats.percentCorrect}% of all players,
+            have guessed it correctly.
+          </p>
+          <p>On average, it took users {stats.avgNumberGuesses} guess(es)</p>
+          <p>and {avgTimeString} to correctly guess this word.</p>
           <p>{middWord}</p>
+          <p />
         </div>
       );
     } else {
@@ -62,5 +82,6 @@ Popup.propTypes = {
   time: PropTypes.string,
   gameOver: PropTypes.string.isRequired,
   correctWord: PropTypes.string.isRequired,
+  stats: PropTypes.object.isRequired,
   setShowStats: PropTypes.func.isRequired,
 };

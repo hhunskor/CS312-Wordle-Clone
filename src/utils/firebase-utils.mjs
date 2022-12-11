@@ -1,7 +1,6 @@
 // Import the functions you need from the SDKs you need
-
 import { getApp, initializeApp } from "firebase/app";
-import {  initializeFirestore, connectFirestoreEmulator, getFirestore, collection, doc, addDoc, deleteDoc, getDocs } from "firebase/firestore";
+import {  initializeFirestore, connectFirestoreEmulator, getFirestore, collection, doc, getDoc, addDoc, setDoc, updateDoc, deleteDoc, getDocs } from "firebase/firestore";
 
 // Firebase configuration
 const firebaseConfig = {
@@ -12,7 +11,6 @@ const firebaseConfig = {
     messagingSenderId: "75245662272",
     appId: "1:75245662272:web:9f18f18492ea360cdeafa5"
 };
-
 
 // Initialize Firebase
 export function initializeFirebase(){
@@ -31,6 +29,103 @@ export function initializeFirebase(){
     }
     return app;
   }
+}
+
+
+//function takes three fields: the correct word, an array of stats (if the player won), and a boolean set to "true" if the user guessed the word, and false otherwise
+export async function updateWord(word, stats, correct){
+  //stats structure = [number of guesses, time]
+  const db = getFirestore();
+  let playerCount;
+  let correctCount;
+  let avgNumberGuesses;
+  let percentCorrect;
+  let avgTime;
+  let docSnap
+
+  //const usersRef = firestore.collection('users');
+  //const query = usersRef.where('name', '==', 'Alice');
+
+  const docRef = doc(db,"words",word)
+  const docObj = await getDoc(docRef)
+
+  if (docObj.exists()){
+    docSnap = docObj.data()
+    playerCount = (docSnap.playerCount + 1)
+
+    if(correct === true){
+      avgNumberGuesses = (( (docSnap.avgNumberGuesses * docSnap.correctCount) + stats[0] ) / (docSnap.correctCount + 1) ).toFixed(3)
+      avgTime = (( (docSnap.avgTime * docSnap.correctCount) + stats[1] ) / (docSnap.correctCount + 1)).toFixed(3)
+      correctCount = (docSnap.correctCount + 1)
+      percentCorrect = ((correctCount/playerCount) *  100).toFixed(0)
+      
+      setDoc((docRef),{
+        word: word,
+        playerCount: playerCount,
+        correctCount: correctCount,
+        avgNumberGuesses: avgNumberGuesses,
+        percentCorrect: percentCorrect,
+        avgTime: avgTime
+      });
+    }
+    else if(correct === false){
+      percentCorrect = ((docSnap.correctCount/(docSnap.playerCount + 1 )) *  100).toFixed(3)
+      playerCount = (docSnap.playerCount + 1);
+      correctCount = docSnap.correctCount;
+      avgNumberGuesses = docSnap.avgNumberGuesses;
+      avgTime = docSnap.avgTime;
+
+      setDoc((docRef),{
+        word: word,
+        playerCount: playerCount,
+        correctCount: correctCount,
+        avgNumberGuesses: avgNumberGuesses,
+        percentCorrect: percentCorrect,
+        avgTime: avgTime
+      });
+    }
+  }
+  else{
+    if(correct === true){
+      correctCount = 1
+      playerCount = 1;
+      percentCorrect = ( (1/1) * 100)
+      avgNumberGuesses = stats[0]
+      avgTime = stats[1]
+    }
+    else{
+      correctCount = 0;
+      playerCount = 1;
+      percentCorrect = 0;
+      avgNumberGuesses = 0;
+      avgTime = 0;
+    }
+    setDoc((docRef),{
+      word: word,
+      playerCount: playerCount,
+      correctCount: correctCount,
+      avgNumberGuesses: avgNumberGuesses,
+      percentCorrect: percentCorrect,
+      avgTime: avgTime
+    });
+
+    console.log({
+      word: word,
+      playerCount: playerCount,
+      correctCount: correctCount,
+      avgNumberGuesses: avgNumberGuesses,
+      percentCorrect: percentCorrect,
+      avgTime: avgTime
+    })
+  }
+  return({
+    word: word,
+    playerCount: playerCount,
+    correctCount: correctCount,
+    avgNumberGuesses: avgNumberGuesses,
+    percentCorrect: percentCorrect,
+    avgTime: avgTime
+  });
 }
 
 /**

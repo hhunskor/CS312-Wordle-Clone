@@ -4,7 +4,6 @@ import styles from "../styles/Guess.module.css";
 
 function Guess({ tiles }) {
   const grid = [];
-  // console.log(tiles)
 
   let tileNumber = 0;
   for (let i = 0; i < 6; i++) {

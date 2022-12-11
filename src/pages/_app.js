@@ -13,6 +13,8 @@ function MainApp({ Component, pageProps }) {
   const [correctWord] = useState(
     answers[Math.floor(Math.random() * answers.length)].word.toUpperCase()
   );
+  arrayWords.push(correctWord.toLowerCase());
+
   const props = {
     ...pageProps,
     arrayWords,

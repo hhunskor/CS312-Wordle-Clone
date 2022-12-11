@@ -253,6 +253,7 @@ export default function Main({
           alphabet={alphabet}
           setGuess={setGuess}
           guessWord={guessWord}
+          submit={handleSubmit}
         />
         <footer>
           A 312 project | Authors: Team Frogfish Hannah, Addison, Wright,

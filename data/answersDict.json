@@ -1,5 +1,15 @@
 [
   {
+    "word": "rosie",
+    "playerCount": 0,
+    "correctCount": 0,
+    "avgNumberGuesses": 0,
+    "percentCorrect": 0,
+    "avgTime": 0,
+    "middWord": false,
+    "id": "dx1gsx6mr"
+  },
+  {
     "word": "poems",
     "playerCount": 0,
     "correctCount": 0,
@@ -526,7 +536,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "c8ehx9hot"
   },
   {
@@ -536,7 +546,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "4n273g5z4"
   },
   {
@@ -706,7 +716,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "rfayq4n6i"
   },
   {
@@ -836,7 +846,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "4kdhj3j2p"
   },
   {
@@ -886,7 +896,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "235qmyg0d"
   },
   {
@@ -896,7 +906,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "5pas3kjao"
   },
   {
@@ -976,7 +986,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "wscbxkbe9"
   },
   {
@@ -1006,7 +1016,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "98wnza945"
   },
   {
@@ -1046,7 +1056,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "hqozudga5"
   },
   {
@@ -1266,7 +1276,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "k2hlmsh4f"
   },
   {
@@ -1556,7 +1566,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "atbw0i1fw"
   },
   {
@@ -1586,7 +1596,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "2vez5pms3"
   },
   {
@@ -1686,7 +1696,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "uvehhgffy"
   },
   {
@@ -1796,7 +1806,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "hcllgqz2l"
   },
   {
@@ -2116,7 +2126,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "0sw7jr06i"
   },
   {
@@ -2356,7 +2366,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "na4eiy0go"
   },
   {
@@ -2466,7 +2476,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "w44wn55pj"
   },
   {
@@ -2566,7 +2576,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "pf1381l3t"
   },
   {
@@ -2746,7 +2756,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "8qchylsny"
   },
   {
@@ -2956,7 +2966,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "znfhdldtw"
   },
   {
@@ -3076,7 +3086,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "wmbx8e34m"
   },
   {
@@ -3146,7 +3156,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "c6nfc0480"
   },
   {
@@ -3306,7 +3316,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "j8ju7yqdq"
   },
   {
@@ -3616,7 +3626,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "ccvqrkzsm"
   },
   {
@@ -3666,7 +3676,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "fjl7s7ded"
   },
   {
@@ -3706,7 +3716,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "ki3d3ld8c"
   },
   {
@@ -3726,7 +3736,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "cgapnfenb"
   },
   {
@@ -3806,7 +3816,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "hqtu09pmg"
   },
   {
@@ -4046,7 +4056,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "jxfmmvocs"
   },
   {
@@ -4166,7 +4176,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "ueak5qofj"
   },
   {
@@ -4286,7 +4296,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "urxp1glp2"
   },
   {
@@ -4856,7 +4866,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "sth8tez83"
   },
   {
@@ -4976,7 +4986,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "u9ppkga74"
   },
   {
@@ -5056,7 +5066,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "x9yewmtcm"
   },
   {
@@ -5116,7 +5126,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "lm5m3v3wc"
   },
   {
@@ -5186,7 +5196,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "s8ckiv3qd"
   },
   {
@@ -5686,7 +5696,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "vudgn7vg9"
   },
   {
@@ -6106,7 +6116,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "8ze8d6zrf"
   },
   {
@@ -6116,7 +6126,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "ao4ip7x3v"
   },
   {
@@ -6216,7 +6226,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "y8eehf0z4"
   },
   {
@@ -6366,7 +6376,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "7hufsue3h"
   },
   {
@@ -6396,7 +6406,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "k77x658hg"
   },
   {
@@ -6406,7 +6416,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": true,
+    "middWord": false,
     "id": "xfpxgcjfy"
   },
   {
@@ -6756,7 +6766,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "2vll4zv3n"
   },
   {
@@ -6876,7 +6886,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "wftz4qrna"
   },
   {
@@ -6916,7 +6926,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "1lqs3psnz"
   },
   {
@@ -6946,7 +6956,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "anhcd2mf6"
   },
   {
@@ -7006,7 +7016,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "o5ex3ovmp"
   },
   {
@@ -7036,7 +7046,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "igpma5wbt"
   },
   {
@@ -7416,7 +7426,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "9cwy5755g"
   },
   {
@@ -7526,7 +7536,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "iotco2flk"
   },
   {
@@ -7646,7 +7656,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "lvrgk4n8o"
   },
   {
@@ -7986,7 +7996,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "o4p9sxfrq"
   },
   {
@@ -8296,7 +8306,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "y0xvv8mua"
   },
   {
@@ -8396,7 +8406,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "dqy34l1p8"
   },
   {
@@ -8606,7 +8616,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "h7lr61hl3"
   },
   {
@@ -9046,7 +9056,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "udhpjkofb"
   },
   {
@@ -9136,7 +9146,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "4p9qylgbv"
   },
   {
@@ -9266,7 +9276,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "h0kxrm606"
   },
   {
@@ -9626,7 +9636,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "tpkrt4g1o"
   },
   {
@@ -9960,13 +9970,23 @@
     "id": "1yuc8i2hh"
   },
   {
+    "word": "febby",
+    "playerCount": 0,
+    "correctCount": 0,
+    "avgNumberGuesses": 0,
+    "percentCorrect": 0,
+    "avgTime": 0,
+    "middWord": true,
+    "id": "2r412xms"
+  },
+  {
     "word": "hobby",
     "playerCount": 0,
     "correctCount": 0,
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "23ph12xms"
   },
   {
@@ -10006,7 +10026,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "tzlzgvmnl"
   },
   {
@@ -10016,7 +10036,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "lr7le4ab0"
   },
   {
@@ -10036,7 +10056,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": true,
+    "middWord": false,
     "id": "llqgku7qg"
   },
   {
@@ -10126,7 +10146,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": true,
+    "middWord": false,
     "id": "4ype605p0"
   },
   {
@@ -10236,7 +10256,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "54yc8zdzo"
   },
   {
@@ -10336,7 +10356,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "62q5kzfwu"
   },
   {
@@ -10346,7 +10366,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "rxkyijf3o"
   },
   {
@@ -10536,7 +10556,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "286bg2t39"
   },
   {
@@ -10566,7 +10586,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "61d9f0bjk"
   },
   {
@@ -11176,7 +11196,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "fpod0238h"
   },
   {
@@ -11496,7 +11516,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "065yty3ka"
   },
   {
@@ -11626,7 +11646,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "df1dxcr09"
   },
   {
@@ -12126,7 +12146,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "xtqrcy5y4"
   },
   {
@@ -12346,7 +12366,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "12fgpyltc"
   },
   {
@@ -13846,7 +13866,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "he3o3fn4d"
   },
   {
@@ -14906,7 +14926,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "myturbbac"
   },
   {
@@ -14926,7 +14946,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "sqbraujlj"
   },
   {
@@ -15016,7 +15036,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "39wdsdjgt"
   },
   {
@@ -15356,7 +15376,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "2fvqbl3br"
   },
   {
@@ -15476,7 +15496,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "urk3frkt3"
   },
   {
@@ -16096,7 +16116,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "h0luuajsv"
   },
   {
@@ -16576,7 +16596,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "sk3huxahx"
   },
   {
@@ -16826,7 +16846,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "65fvgiuza"
   },
   {
@@ -16836,7 +16856,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "zsjzjtl0z"
   },
   {
@@ -16906,7 +16926,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "1g3kb3u1f"
   },
   {
@@ -17016,7 +17036,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "dtluw0ts5"
   },
   {
@@ -17846,7 +17866,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "moqz0jadq"
   },
   {
@@ -18126,7 +18146,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "81uz7lsy3"
   },
   {
@@ -18246,7 +18266,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "nsl4xd031"
   },
   {
@@ -18266,7 +18286,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "v9l6r47e9"
   },
   {
@@ -18396,7 +18416,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "7pwebuvcl"
   },
   {
@@ -18476,7 +18496,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "t2s2e3k1f"
   },
   {
@@ -18836,7 +18856,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "3h9xfj47w"
   },
   {
@@ -19766,7 +19786,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "jxjbq0ye5"
   },
   {
@@ -19776,7 +19796,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "8o9ikbf7b"
   },
   {
@@ -20066,7 +20086,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "egtd5a7io"
   },
   {
@@ -20306,7 +20326,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "4epebxtks"
   },
   {
@@ -20836,7 +20856,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "20p8szsax"
   },
   {
@@ -20906,7 +20926,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "xsqq0dgwp"
   },
   {
@@ -21036,7 +21056,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "4wvvm1uxh"
   },
   {
@@ -21496,7 +21516,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "6bpfxhobb"
   },
   {
@@ -21916,7 +21936,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "4jxxjhgmj"
   },
   {
@@ -22226,7 +22246,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "og4wmc0c3"
   },
   {
@@ -22326,7 +22346,7 @@
     "avgNumberGuesses": 0,
     "percentCorrect": 0,
     "avgTime": 0,
-    "middWord": false,
+    "middWord": true,
     "id": "mufcjjwqd"
   },
   {

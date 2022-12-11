@@ -5,6 +5,7 @@ import Guess from "../components/Guess";
 import Keyboard from "../components/Keyboard";
 import styles from "../styles/index.module.css";
 import Popup from "../components/Popup";
+import { updateWord } from "../utils/firebase-utils.mjs";
 
 export default function Main({
   arrayWords,
@@ -22,6 +23,8 @@ export default function Main({
   const [guessWord, setGuess] = useState("");
   const [gameOver, setGameOver] = useState("false");
   const [showStats, setShowStats] = useState(false);
+  const [stats, setStats] = useState();
+  const [guesses, setGuesses] = useState(1);
 
   /// checks that a word is a valid guess in that there are no spaces or special characters, the word is 5 letters, and that the word is
   /// part of the mac stored dictionary of 5 letter words
@@ -118,22 +121,30 @@ export default function Main({
       });
     }
     setTiles(tilesCopy);
+    return <Guess tiles={tiles} />;
+  };
 
-    // check for win or loss
+  async function handleGameEnd() {
     if (guessWord === correctWord) {
+      console.log(guesses);
+
       endTime = Date.now();
       const gameTime = endTime - startTime;
       const seconds = Math.floor((gameTime / 1000) % 60);
       const minutes = Math.floor((gameTime / (1000 * 60)) % 60);
       const hours = Math.floor((gameTime / (1000 * 60 * 60)) % 24);
 
+      const tempstats = await updateWord(correctWord, [guesses, gameTime], true);
+
+      setStats(tempstats);
+      console.log(stats);
+
       setTime(
         `You solved in: ${hours} hours, ${minutes} minutes, and ${seconds} seconds`
       );
-
       setGameOver("win");
       setShowStats(true);
-    } else if (tilesCopy[29].letter !== "") {
+    } else if (guesses === 6 && guessWord !== correctWord) {
       endTime = Date.now();
       const gameTime = endTime - startTime;
       const seconds = Math.floor((gameTime / 1000) % 60);
@@ -144,12 +155,15 @@ export default function Main({
         `You failed to solve in: ${hours} hours, ${minutes} minutes, and ${seconds} seconds`
       );
 
+      const tempstats = await updateWord(correctWord, [], false);
+
+      setStats(tempstats);
+      console.log(stats);
+
       setGameOver("loss");
       setShowStats(true);
     }
-
-    return <Guess tiles={tiles} />;
-  };
+  }
 
   const updateAlphabet = () => {
     const alphabetCopy = alphabet.map((x) => {
@@ -183,8 +197,11 @@ export default function Main({
   const handleSubmit = () => {
     if (isValidGuess() === true) {
       guessComponent = updateTiles();
+      console.log(tiles);
       updateAlphabet();
       setGuess("");
+      setGuesses(guesses + 1);
+      handleGameEnd();
     }
   };
 
@@ -197,6 +214,7 @@ export default function Main({
   // still want to autoFocus this element and get rid of cursor and blue highlight around box
   const inputBox = (
     <input
+      autoComplete="off"
       ref={(input) => input && input.focus()}
       className={styles.inputBox}
       value={guessWord}
@@ -244,6 +262,7 @@ export default function Main({
             gameOver={gameOver}
             correctWord={correctWord}
             time={time}
+            stats={stats}
             setShowStats={setShowStats}
           />
         ) : undefined}

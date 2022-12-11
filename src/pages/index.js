@@ -126,18 +126,19 @@ export default function Main({
 
   async function handleGameEnd() {
     if (guessWord === correctWord) {
-      console.log(guesses);
-
       endTime = Date.now();
       const gameTime = endTime - startTime;
       const seconds = Math.floor((gameTime / 1000) % 60);
       const minutes = Math.floor((gameTime / (1000 * 60)) % 60);
       const hours = Math.floor((gameTime / (1000 * 60 * 60)) % 24);
 
-      const tempstats = await updateWord(correctWord, [guesses, gameTime], true);
+      const tempstats = await updateWord(
+        correctWord,
+        [guesses, gameTime],
+        true
+      );
 
       setStats(tempstats);
-      console.log(stats);
 
       setTime(
         `You solved in: ${hours} hours, ${minutes} minutes, and ${seconds} seconds`
@@ -158,7 +159,6 @@ export default function Main({
       const tempstats = await updateWord(correctWord, [], false);
 
       setStats(tempstats);
-      console.log(stats);
 
       setGameOver("loss");
       setShowStats(true);
@@ -197,7 +197,6 @@ export default function Main({
   const handleSubmit = () => {
     if (isValidGuess() === true) {
       guessComponent = updateTiles();
-      console.log(tiles);
       updateAlphabet();
       setGuess("");
       setGuesses(guesses + 1);
@@ -272,6 +271,7 @@ export default function Main({
           alphabet={alphabet}
           setGuess={setGuess}
           guessWord={guessWord}
+          submit={handleSubmit}
         />
         <footer>
           A 312 project | Authors: Team Frogfish Hannah, Addison, Wright,

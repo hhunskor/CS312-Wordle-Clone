@@ -1,69 +1,82 @@
 .grayKey {
-  color: white;
-  background-color: gray;
+  color: black;
+  background-color: #d3d6da;
   height: 50px;
   width: 40px;
-  border-radius: 1px;
+  border-radius: 5px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  margin: 0 6px 0 0;
+  border: none;
 }
 
 .darkGrayKey {
   color: white;
-  background-color: rgb(16, 14, 14);
+  background-color: #787c7e;
   height: 50px;
   width: 40px;
-  border-radius: 1px;
+  border-radius: 5px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  margin: 0 6px 0 0;
+  border: none;
 }
 
 .greenKey {
-  color: white;
-  background-color: green;
+  color: black;
+  background-color: #6aaa64;
   height: 50px;
   width: 40px;
-  border-radius: 1px;
+  border-radius: 5px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  margin: 0 6px 0 0;
+  border: none;
 }
 
 .yellowKey {
-  color: white;
-  background-color: rgb(196, 196, 51);
+  color: black;
+  background-color: #c9b458;
   height: 50px;
   width: 40px;
-  border-radius: 1px;
+  border-radius: 5px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
-}
-
-.enterKey {
-  color: white;
-  background-color: gray;
-  height: 50px;
-  width: 80px;
-  border-radius: 1px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  margin: 0 6px 0 0;
+  border: none;
 }
 
 .keyRow {
   width: 100%;
   text-align: center;
+  margin: 8px;
 }
 
 .keyboard {
   position: flex;
-  bottom: 20;
+  bottom: 20px;
   width: 100%;
+}
+
+.specKey {
+  color: black;
+  background-color: #d3d6da;
+  height: 50px;
+  width: 60px;
+  border-radius: 1px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 0 6px 0 0;
+  border: none;
 }

@@ -2,6 +2,8 @@ import PropTypes from "prop-types";
 
 import styles from "../styles/Popup.module.css";
 
+import answers from "../../data/answersDict.json";
+
 export default function Popup({
   gameOver,
   time,
@@ -9,21 +11,26 @@ export default function Popup({
   stats,
   setShowStats,
 }) {
-  console.log(stats);
-
-  const {avgTime} = stats;
+  const { avgTime } = stats;
   const seconds = Math.floor((avgTime / 1000) % 60);
   const minutes = Math.floor((avgTime / (1000 * 60)) % 60);
   const hours = Math.floor((avgTime / (1000 * 60 * 60)) % 24);
 
   const avgTimeString = `${hours} hours, ${minutes} minutes, and ${seconds} seconds`;
-
+  const wordData = answers.find((obj) => {
+    return obj.word.toUpperCase() === correctWord;
+  });
+  let middWord = "";
+  if (wordData.middWord === true) {
+    middWord =
+      "Congratulations! You have discovered a hidden Middlebury College word.";
+  }
   const endMessage = () => {
     if (gameOver === "win") {
       return (
-        <p>
+        <div>
           <strong>You win!</strong> The correct word was{" "}
-          <strong>{correctWord}</strong>. Play again by refreshing the page.
+          <strong>{correctWord}</strong>. Play again!
           <p>{time}</p>
           <p>{stats.playerCount} Players have attempted this word. </p>
           <p>
@@ -32,14 +39,14 @@ export default function Popup({
           </p>
           <p>On average, it took users {stats.avgNumberGuesses} guess(es)</p>
           <p>and {avgTimeString} to correctly guess this word.</p>
+          <p>{middWord}</p>
           <p />
-        </p>
+        </div>
       );
     } else {
       return (
         <p>
-          The correct word was <strong>{correctWord}</strong>. Out of guesses!
-          Play again by refreshing the page.
+          Out of guesses! Keep playing to try again.
           <p>{time}</p>
         </p>
       );
@@ -57,6 +64,14 @@ export default function Popup({
           }}
         >
           Close
+        </button>
+        <button
+          className={styles.restartBtn}
+          onClick={() => {
+            window.location.reload(true);
+          }}
+        >
+          Play Again
         </button>
       </div>
     </div>

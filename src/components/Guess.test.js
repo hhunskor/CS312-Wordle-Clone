@@ -180,7 +180,6 @@ describe.skip("Guesses render", () => {
       }
       render(<Guess tiles={tiles} />);
       const uppercaseLetter = sampleGuess.charAt(0).toUpperCase();
-      // console.log(uppercaseLetter);
       expect(screen.getByText({ uppercaseLetter })).toBeVisible();
     });
   });
